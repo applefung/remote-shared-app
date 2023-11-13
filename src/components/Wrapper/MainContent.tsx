@@ -9,10 +9,12 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import Loading from "../Loading";
 import MailIcon from "@mui/icons-material/Mail";
 import { ReactNode } from "react";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { useAppSelector } from "../../hooks";
 import { useNavigate } from "react-router-dom";
 
 interface WrapperProps {
@@ -41,7 +43,8 @@ const items = [
 
 const MainContent = ({ title, children}: WrapperProps) => {
   const navigate = useNavigate();
-
+  const loading = useAppSelector((state) => state.ui.isLoading);
+  
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -92,6 +95,7 @@ const MainContent = ({ title, children}: WrapperProps) => {
         <Toolbar />
         {children}
       </Box>
+      <Loading isLoading={loading}/>
     </Box>
   );
 };
