@@ -11,7 +11,7 @@ export default defineConfig({
       filename: "shared.js",
       exposes: {
         "./SearchBar": "./src/components/SearchBar.tsx",
-        "./Wrapper": "./src/components/Wrapper.tsx",
+        "./Wrapper": "./src/components/Wrapper",
         "./hooks": "./src/hooks/",
         "./reducers": "./src/reducers/",
         "./utils": "./src/utils/",
