@@ -30,7 +30,7 @@ const Wrapper = ({ isAuth = false, ...restProps }: WrapperProps) => {
 
   return !isAuth || isLogin ? (
     <Provider store={store}>
-      {!isAuth || (isLogin && <MainContent {...restProps} />)}
+      <MainContent {...restProps} />
     </Provider>
   ) : (
     <div />
